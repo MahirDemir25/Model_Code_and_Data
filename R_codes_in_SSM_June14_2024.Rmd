@@ -125,8 +125,8 @@ nocoup<-rep(c(rep(1,364),0),46)
 
 #### Import surface temperature data at Bosmina 45 m site
 ```{}
-#import temperature data for #### 45m #####
-Tempdata_merge<-read.csv("Tempdata_final_full_45m.csv",head=T)
+#import surface temperature data for #### 45m #####
+Tempdata_merge<-read.csv("Surface_Tempdata_for45m.csv",head=T)
 Tempdata_merge<-subset(Tempdata_merge,Year!=2000)
 Tempdata_merge$day<-as.numeric(1+(as.Date(Tempdata_merge$Date, format="%m/%d/%y")-rep(as.Date("1998-01-01"),length(Tempdata_merge$Date)) ))
 
@@ -140,7 +140,7 @@ Temp<-Temp[1:7665]
 We calculate the temperature gradient for the 45 m site.
 ```{}
 ## Temp at 40m in Lake Michigan (LM) for 45m
-L_Temp<-read.csv("Temp_at40m_98-18_for45m.csv",header=TRUE)
+L_Temp<-read.csv("Temp_at40m_Depth_98-18_for45m.csv",header=TRUE)
 L_Temp<-subset(L_Temp,Year!=2000)
 L_Temp$day<-as.numeric((as.Date( L_Temp$Date, format="%m/%d/%y")-rep(as.Date("1998-01-01"),length(L_Temp$Date)) ))
 
