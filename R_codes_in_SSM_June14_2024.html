@@ -503,8 +503,8 @@ abundance to zero at the end of each year.</p>
 </div>
 <div id="import-surface-temperature-data-at-bosmina-45-m-site" class="section level4">
 <h4>Import surface temperature data at Bosmina 45 m site</h4>
-<pre><code>#import temperature data for #### 45m #####
-Tempdata_merge&lt;-read.csv(&quot;Tempdata_final_full_45m.csv&quot;,head=T)
+<pre><code>#import surface temperature data for #### 45m #####
+Tempdata_merge&lt;-read.csv(&quot;Surface_Tempdata_for45m.csv&quot;,head=T)
 Tempdata_merge&lt;-subset(Tempdata_merge,Year!=2000)
 Tempdata_merge$day&lt;-as.numeric(1+(as.Date(Tempdata_merge$Date, format=&quot;%m/%d/%y&quot;)-rep(as.Date(&quot;1998-01-01&quot;),length(Tempdata_merge$Date)) ))
 
@@ -519,7 +519,7 @@ Temp&lt;-Temp[1:7665]</code></pre>
 gradient</h4>
 <p>We calculate the temperature gradient for the 45 m site.</p>
 <pre><code>## Temp at 40m in Lake Michigan (LM) for 45m
-L_Temp&lt;-read.csv(&quot;Temp_at40m_98-18_for45m.csv&quot;,header=TRUE)
+L_Temp&lt;-read.csv(&quot;Temp_at40m_Depth_98-18_for45m.csv&quot;,header=TRUE)
 L_Temp&lt;-subset(L_Temp,Year!=2000)
 L_Temp$day&lt;-as.numeric((as.Date( L_Temp$Date, format=&quot;%m/%d/%y&quot;)-rep(as.Date(&quot;1998-01-01&quot;),length(L_Temp$Date)) ))
 
